@@ -1,8 +1,6 @@
 import React from "react";
-import DiscountProductCard from "../global_ui/DiscountCard";
 import { ArrowForwardRounded } from "@mui/icons-material";
 import Link from "next/link";
-
 
 export default function SectionWrapper({
   children,
@@ -10,7 +8,7 @@ export default function SectionWrapper({
   subhead,
   logo,
   description,
-  link='#',
+  link = "#",
 }) {
   return (
     <div className="bg-gray-50 rounded-2xl py-12 px-4 lg:px-16">
@@ -18,7 +16,7 @@ export default function SectionWrapper({
         {header}
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-        {/* Highlighted Discount Card */}
+        {/* Highlighted  Card */}
         <div className="bg-blue-600 text-white rounded-xl p-6 flex flex-col justify-between hover:bg-blue-500 transition-colors duration-300">
           <div className="mb-4">
             <h3 className="text-3xl font-semibold">{subhead}</h3>
@@ -39,10 +37,9 @@ export default function SectionWrapper({
           </div>
         </div>
 
-        {/* Discounted Product Cards */}
+        {/* Product Cards */}
         {children}
       </div>
     </div>
   );
-};
-
+}

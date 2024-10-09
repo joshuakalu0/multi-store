@@ -1,10 +1,10 @@
 import React from "react";
 
-const PromoSection = () => {
+const CoverSection = () => {
   return (
     <div className="bg-blue-500 py-12 px-4 lg:px-16 rounded-lg">
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-6">
-        {/* Promo Text */}
+        {/* Brand name  */}
         <div className="space-y-4">
           <h2 className="text-5xl font-bold text-gray-900">
             CEO Electronic Store, Lagos
@@ -23,10 +23,10 @@ const PromoSection = () => {
           </div>
         </div>
 
-        {/* Promo Image */}
+        {/* cover Image */}
         <div className="relative">
           <img
-            src="ele.png" // Replace with actual image path
+            src="ele.png"
             alt="Decorative Pillow"
             className="rounded-lg object-cover w-full h-full"
           />
@@ -36,4 +36,4 @@ const PromoSection = () => {
   );
 };
 
-export default PromoSection;
+export default CoverSection;

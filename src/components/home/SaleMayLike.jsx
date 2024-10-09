@@ -1,13 +1,6 @@
-import {
-  ArrowForwardRounded,
-  ArrowRight,
-  CardTravel,
-  ShoppingCart,
-} from "@mui/icons-material";
-import Image from "next/image";
+import { ArrowForwardRounded } from "@mui/icons-material";
 import Link from "next/link";
 import React from "react";
-import { HeartIcon } from "../svg/Heart";
 import ProductCard from "../global_ui/ProductCard";
 
 export default function SaleMayLike({ discount = false }) {
