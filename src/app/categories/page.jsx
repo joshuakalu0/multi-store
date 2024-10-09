@@ -1,38 +1,96 @@
 import React from "react";
 
-const CategoryGrid = () => {
+const CategoryPage = () => {
   const categories = [
-    { name: "Music", color: "bg-rose-300" },
-    { name: "Photography", color: "bg-teal-400" },
-    { name: "Shopping", color: "bg-orange-300" },
-    { name: "Gifts", color: "bg-lime-300" },
-    { name: "Sports", color: "bg-teal-700" },
-    { name: "Books", color: "bg-emerald-300" },
-    { name: "Games", color: "bg-fuchsia-500" },
-    { name: "Religion", color: "bg-slate-500" },
-    { name: "Cars", color: "bg-sky-300" },
-    { name: "Crafts", color: "bg-blue-400" },
-    { name: "Gadgets", color: "bg-amber-400" },
-    { name: "Art & Design", color: "bg-cyan-500" },
+    {
+      name: "laptop",
+      description: "Dell, HP, Acer..",
+      image: "/pc.png",
+    },
+    {
+      name: "speaker",
+      description: "JBL, Samsung, Sony",
+      image: "/speaker.png",
+    },
+    {
+      name: "Phones",
+      description: "Iphone,Samsung,Tecno",
+      image: "/phones.png",
+    },
+    {
+      name: "Headphones",
+      description: "Itel,JBL,Iphone...",
+      image: "/headphone.png",
+    },
+    {
+      name: "laptop",
+      description: "Dell, HP, Acer..",
+      image: "/pc.png",
+    },
+    {
+      name: "speaker",
+      description: "JBL, Samsung, Sony",
+      image: "/speaker.png",
+    },
+    {
+      name: "Phones",
+      description: "Iphone,Samsung,Tecno",
+      image: "/phones.png",
+    },
+    {
+      name: "Headphones",
+      description: "Itel,JBL,Iphone...",
+      image: "/headphone.png",
+    },
+    {
+      name: "laptop",
+      description: "Dell, HP, Acer..",
+      image: "/pc.png",
+    },
+    {
+      name: "speaker",
+      description: "JBL, Samsung, Sony",
+      image: "/speaker.png",
+    },
+    {
+      name: "Phones",
+      description: "Iphone,Samsung,Tecno",
+      image: "/phones.png",
+    },
+    {
+      name: "Headphones",
+      description: "Itel,JBL,Iphone...",
+      image: "/headphone.png",
+    },
   ];
 
   return (
-    <main className="container mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
-        All Categories
-      </h1>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div className="bg-gray-100 py-12 mt-20 rounded-xl">
+      <h2 className="text-5xl font-bold text-gray-900 mb-10 text-center">
+        Browse Categories
+      </h2>
+      <div className="grid max-sm:grid-cols-1 max-md:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
         {categories.map((category, index) => (
-          <div
-            key={index}
-            className={`rounded-lg p-8 ${category.color} text-white flex items-center justify-center h-40 transition-transform transform hover:scale-105`}
-          >
-            <span className="text-xl font-semibold">{category.name}</span>
+          <div key={index} className="relative overflow-hidden group">
+            <img
+              src={category.image}
+              alt={category.name}
+              className="w-full h-80 object-cover rounded-lg transition-transform duration-500 transform group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <h3 className="text-4xl font-bold text-white">{category.name}</h3>
+              <p className="text-gray-300 text-lg mt-2">
+                {category.description}
+              </p>
+              <button className="mt-4 px-6 py-2 bg-blue-400 text-black font-semibold rounded-lg hover:bg-blue-500 transition-colors">
+                Explore {category.name}
+              </button>
+            </div>
           </div>
         ))}
       </div>
-    </main>
+    </div>
   );
 };
 
-export default CategoryGrid;
+export default CategoryPage;
