@@ -1,32 +1,41 @@
 import React from "react";
 import { HeartIcon } from "../svg/Heart";
+import { ShoppingCart } from "@mui/icons-material";
 
-export default function ProductCard() {
+export default function ProductCard({ discount = false, product }) {
   return (
-    <div className="relative w-full min-w-[250px] max-w-[270px] border rounded-lg p-4 shadow-lg">
-      {/* Image section */}
-      <div className="mb-4 relative">
-        <img
-          className="w-full h-auto rounded-lg"
-          src="/timg.jpg"
-          alt="T-shirt and Shorts Set"
-        />
+    <div className="bg-white hover:bg-gray-100 rounded-xl shadow-lg p-4 pt-1 flex flex-col hover:shadow-xl transition-shadow duration-300">
+      <div className="h-1/2 w-ful justify-center items-center relative pb-2">
         {/* Wishlist Icon */}
-        <div className="absolute bottom-3 bg-gray-100 rounded-full p-1 right-3">
-          <HeartIcon className="w-5" />
+        <div className="self-end absolute right-3 top-10 hover:bg-[#e2e2e2] rounded-full p-1  text-red-500 hover:text-red-700 cursor-pointer mb-4">
+          <HeartIcon className="w-6" />
         </div>
+        {/* Discount Badge */}
+        {discount == true && (
+          <div className="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-lg">
+            80% OFF
+          </div>
+        )}
+
+        {/* Product Image */}
+        <img
+          src={product.image}
+          alt={product.name}
+          className="h-full object-contain mb-4"
+        />
       </div>
-
-      {/* Product details section */}
-      <div>
-        <h3 className="text-sm font-semibold text-gray-700">
-          T-Shirts + Shorts 100% Cotton Mens Short Sleeve Set-White
-        </h3>
-
+      <div className="h-1/2 w-ful justify-end flex-col items-end">
+        {/* Product Info */}
+        <h3 className="text-gray-800 font-bold text-sm mb-2">{product.name}</h3>
+        <p className="text-gray-600 text-sm">
+          Rating:<span className="text-yellow-400">★★★★☆</span> {product.rating}{" "}
+          ({product.reviews})
+        </p>
         {/* Price Section */}
         <div className="flex items-center mt-2">
           <span className="text-xl font-bold text-orange-500">
-            <sup>₦</sup>9,203
+            <sup>₦</sup>
+            {product.price}
           </span>
           <span className="text-sm text-gray-500 line-through ml-2">
             <sup>₦</sup>10,592
@@ -34,17 +43,13 @@ export default function ProductCard() {
           <span className="text-sm text-orange-500 ml-2">-13%</span>
         </div>
 
-        {/* Rating Section */}
-        <div className="flex items-center mt-2 text-sm text-gray-500">
-          <span className="text-yellow-400">★★★★☆</span>
-          <span className="ml-2">(996)</span>
+        {/* Cart Button */}
+        <div className="mt-auto">
+          <button className="w-full bg-blue-600 text-white rounded-lg py-2 mt-4 hover:bg-blue-700">
+            <ShoppingCart />
+            Add to Cart
+          </button>
         </div>
-      </div>
-      {/* add to chart button */}
-      <div className="w-full flex justify-center items-center pt-3">
-        <button class="px-6 py-1 transition ease-in duration-200 uppercase rounded-xl hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">
-          Add to cart
-        </button>
       </div>
     </div>
   );

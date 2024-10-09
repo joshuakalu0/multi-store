@@ -1,38 +1,125 @@
-"use client";
-import React, { useRef } from "react";
-import RightArrow from "../svg/RightArrow";
+import {
+  ArrowForwardRounded,
+  ArrowRight,
+  CardTravel,
+  ShoppingCart,
+} from "@mui/icons-material";
+import Image from "next/image";
 import Link from "next/link";
+import React from "react";
+import { HeartIcon } from "../svg/Heart";
 import ProductCard from "../global_ui/ProductCard";
 
-const data = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 11, 21, 13, 14, 15, 16, 17, 18, 19, 20,
-];
-export default function SaleYouMAyLike({ children }) {
-  //   product you may like component
-  return (
-    <div className="w-full h-auto flex flex-col   rounded-md border border-gray-50">
-      {/* section hearder */}
-      <div className=" flex justify-between flex-row items-center p-1 px-2 bg-[#eeeaea]">
-        <h2 className="font-semibold text-lg p-2 pl-4 text-gray-800 uppercase">
-          Other Product Your May Like
-        </h2>
-        <Link
-          href="#"
-          className="text-gray-600  bg-transparent  font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center  "
-        >
-          Read more
-          <RightArrow />
-        </Link>
-      </div>
+export default function SaleMayLike({ discount = false }) {
+  const products = [
+    { name: "displayer" },
+    {
+      name: "Lenove",
+      price: "$250",
+      rating: "5.0",
+      reviews: "10 reviews",
+      image: "/ppc.png",
+    },
+    {
+      name: "Lenove",
+      price: "$250",
+      rating: "5.0",
+      reviews: "10 reviews",
+      image: "/ppc.png",
+    },
+    {
+      name: "Lenove",
+      price: "$250",
+      rating: "5.0",
+      reviews: "10 reviews",
+      image: "/ppc.png",
+    },
+    {
+      name: "Lenove",
+      price: "$250",
+      rating: "5.0",
+      reviews: "10 reviews",
+      image: "/ppc.png",
+    },
+    {
+      name: "Lenove",
+      price: "$250",
+      rating: "5.0",
+      reviews: "10 reviews",
+      image: "/ppc.png",
+    },
+    {
+      name: "Lenove",
+      price: "$250",
+      rating: "5.0",
+      reviews: "10 reviews",
+      image: "/ppc.png",
+    },
+    {
+      name: "Lenove",
+      price: "$250",
+      rating: "5.0",
+      reviews: "10 reviews",
+      image: "/ppc.png",
+    },
+    {
+      name: "Lenove",
+      price: "$250",
+      rating: "5.0",
+      reviews: "10 reviews",
+      image: "/ppc.png",
+    },
+    {
+      name: "Lenove",
+      price: "$250",
+      rating: "5.0",
+      reviews: "10 reviews",
+      image: "/ppc.png",
+    },
+    {
+      name: "Lenove",
+      price: "$250",
+      rating: "5.0",
+      reviews: "10 reviews",
+      image: "/ppc.png",
+    },
+  ];
 
-      {/* psection list wrapper */}
-      <div className="bg-white flex flex-grow h-full justify-center space-x-2  items-center group/item flex-row">
-        <div className="flex  items-center gap-y-[10px] gap-x-3 flex-wrap justify-center justify-items-center md:grid md:grid-cols-[repeat(auto-fill,minmax(270px,1fr))] w-full mb-2 ml-0">
-          {data.map((i, l) => (
-            <ProductCard key={1} />
-          ))}
+  return (
+    <div className="bg-gray-50 rounded-2xl py-12 px-4 lg:px-16">
+      <h2 className="text-4xl font-bold text-gray-800 text-center mb-8">
+        Other Product you may like
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-6">
+          {products.map((product, index) => {
+            if (product.name == "displayer") return <Displayer key={index} />;
+            return <ProductCard product={product} key={index} />;
+          })}
         </div>
       </div>
     </div>
   );
 }
+
+const Displayer = () => {
+  return (
+    <div className="bg-blue-600 flex-shrink text-white rounded-xl p-6 flex flex-col justify-between">
+      <div className="mb-4">
+        <h2 className="text-3xl font-bold">Other Product</h2>
+        <p className="text-lg mt-2">
+          Check out other product that you may like
+        </p>
+      </div>
+      {/* view more arrow */}
+      <div className="w-full flex justify-end">
+        <Link
+          href="#"
+          className="bg-white text-blue-600 rounded-full float-right p-2 w-10 h-10 flex items-center justify-center hover:bg-gray-200"
+        >
+          <ArrowForwardRounded className="-rotate-45" />
+        </Link>
+      </div>
+    </div>
+  );
+};

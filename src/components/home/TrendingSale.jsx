@@ -1,13 +1,42 @@
 import ProductCard from "../global_ui/ProductCard";
-import ProductWrapper from "./ProductWrapper";
+import SectionWrapper from "./SectionWrapper";
 
-const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 11, 21, 13, 14, 15, 16, 17, 18];
+const products = [
+  {
+    name: "dell E6430 i7",
+    price: "$250",
+    rating: "5.0",
+    reviews: "10 reviews",
+    image: "/ppc.png",
+  },
+  {
+    name: "dell E6430 i7",
+    price: "$250",
+    rating: "5.0",
+    reviews: "10 reviews",
+    image: "/ppc.png",
+  },
+  {
+    name: "dell E6430 i7",
+    price: "$250",
+    rating: "5.0",
+    reviews: "10 reviews",
+    image: "/ppc.png",
+  },
+];
 export default function TrendingSales() {
   return (
-    <ProductWrapper title={"Featured"}>
-      {data.map((i, ii) => (
-        <ProductCard key={ii} />
-      ))}
-    </ProductWrapper>
+    <SectionWrapper
+      header={"Featured"}
+      subhead={"Trend Products"}
+      logo={"/trending.png"}
+      description={"Check out the hottest products"}
+    >
+      <div className="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {products.map((product, index) => (
+          <ProductCard product={product} key={index} />
+        ))}
+      </div>
+    </SectionWrapper>
   );
 }

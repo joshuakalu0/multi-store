@@ -1,13 +1,57 @@
-import ProductCard from "../global_ui/ProductCard";
-import ProductWrapper from "./ProductWrapper";
+import DiscountProductCard from "../global_ui/DiscountCard";
 
-const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 11, 21, 13, 14, 15, 16, 17, 18];
-export default function DiscountedSales() {
+import SectionWrapper from "./SectionWrapper";
+
+const products = [
+  {
+    name: "Air Purifier ",
+    originalPrice: "$220",
+    discountPrice: "$180",
+    discount: "18%",
+    rating: "4.3",
+    reviews: "25 reviews",
+    image: "/ppc.png",
+  },
+  {
+    name: "Air Purifier",
+    originalPrice: "$220",
+    discountPrice: "$180",
+    discount: "18%",
+    rating: "4.3",
+    reviews: "25 reviews",
+    image: "/ppc.png",
+  },
+  {
+    name: "Air Purifier ",
+    originalPrice: "$220",
+    discountPrice: "$180",
+    discount: "18%",
+    rating: "4.3",
+    reviews: "25 reviews",
+    image: "/ppc.png",
+  },
+  {
+    name: "Air Purifier ",
+    originalPrice: "$220",
+    discountPrice: "$180",
+    discount: "18%",
+    rating: "4.3",
+    reviews: "25 reviews",
+    image: "/ppc.png",
+  },
+];
+
+export default function DiscountSales() {
   return (
-    <ProductWrapper title={"Discount"}>
-      {data.map((i, ii) => (
-        <ProductCard key={ii} />
+    <SectionWrapper
+      header={"Exclusive Discounts"}
+      subhead={"Huge Discounts"}
+      logo={"/discount.png"}
+      description={"Save on our top-selling products"}
+    >
+      {products.map((product, index) => (
+        <DiscountProductCard key={index} product={product} />
       ))}
-    </ProductWrapper>
+    </SectionWrapper>
   );
 }
