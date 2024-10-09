@@ -2,7 +2,7 @@ import React from "react";
 
 const CoverSection = () => {
   return (
-    <div className="bg-blue-500 py-12 px-4 lg:px-16 rounded-lg">
+    <div className="bg-blue-300 py-12 px-4 lg:px-16 rounded-lg">
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-6">
         {/* Brand name  */}
         <div className="space-y-4">
