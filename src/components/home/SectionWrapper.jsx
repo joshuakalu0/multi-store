@@ -15,7 +15,7 @@ export default function SectionWrapper({
       <h2 className="text-4xl font-bold text-gray-800 text-center mb-8">
         {header}
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {/* Highlighted  Card */}
         <div className="bg-blue-600 text-white rounded-xl p-6 flex flex-col justify-between hover:bg-blue-500 transition-colors duration-300">
           <div className="mb-4">

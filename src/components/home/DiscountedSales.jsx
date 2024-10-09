@@ -4,15 +4,6 @@ import SectionWrapper from "./SectionWrapper";
 
 const products = [
   {
-    name: "Air Purifier ",
-    originalPrice: "$220",
-    discountPrice: "$180",
-    discount: "18%",
-    rating: "4.3",
-    reviews: "25 reviews",
-    image: "/ppc.png",
-  },
-  {
     name: "Air Purifier",
     originalPrice: "$220",
     discountPrice: "$180",
@@ -48,6 +39,7 @@ export default function DiscountSales() {
       subhead={"Huge Discounts"}
       logo={"/discount.png"}
       description={"Save on our top-selling products"}
+      link="/products"
     >
       {products.map((product, index) => (
         <DiscountProductCard key={index} product={product} />

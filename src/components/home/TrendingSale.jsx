@@ -31,12 +31,13 @@ export default function TrendingSales() {
       subhead={"Trend Products"}
       logo={"/trending.png"}
       description={"Check out the hottest products"}
+      link="/products"
     >
-      <div className="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {products.map((product, index) => (
-          <ProductCard product={product} key={index} />
-        ))}
-      </div>
+      {/* <div className="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"> */}
+      {products.map((product, index) => (
+        <ProductCard product={product} key={index} />
+      ))}
+      {/* </div> */}
     </SectionWrapper>
   );
 }

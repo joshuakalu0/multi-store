@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const CoverSection = () => {
@@ -17,9 +18,12 @@ const CoverSection = () => {
             similique accusantium nemo autem. Veritatis
           </p>
           <div className="space-x-4 mt-6">
-            <button className="bg-gray-800 text-white py-2 px-6 rounded-full shadow-lg hover:bg-gray-900 transition-all duration-300">
+            <Link
+              href="/products"
+              className="bg-gray-800 text-white py-2 px-6 rounded-full shadow-lg hover:bg-gray-900 transition-all duration-300"
+            >
               Explore More
-            </button>
+            </Link>
           </div>
         </div>
 

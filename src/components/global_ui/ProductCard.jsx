@@ -4,7 +4,7 @@ import { ShoppingCart } from "@mui/icons-material";
 
 export default function ProductCard({ discount = false, product }) {
   return (
-    <div className="bg-white hover:bg-gray-100 rounded-xl shadow-lg p-4 pt-1 flex flex-col hover:shadow-xl transition-shadow duration-300">
+    <div className="bg-white min-w-[220px] hover:bg-gray-100 rounded-xl shadow-lg p-4 pt-1 flex flex-col hover:shadow-xl transition-shadow duration-300">
       <div className="h-1/2 w-ful justify-center items-center relative pb-2">
         {/* Wishlist Icon */}
         <div className="self-end absolute right-3 top-10 hover:bg-[#e2e2e2] rounded-full p-1  text-red-500 hover:text-red-700 cursor-pointer mb-4">

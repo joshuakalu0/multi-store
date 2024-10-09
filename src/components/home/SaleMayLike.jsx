@@ -83,13 +83,13 @@ export default function SaleMayLike({ discount = false }) {
       <h2 className="text-4xl font-bold text-gray-800 text-center mb-8">
         Other Product you may like
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-        <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-6">
-          {products.map((product, index) => {
-            if (product.name == "displayer") return <Displayer key={index} />;
-            return <ProductCard product={product} key={index} />;
-          })}
-        </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-lg:grid-cols-4 lg:grid-cols-4 gap-6">
+        {/* <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-6"> */}
+        {products.map((product, index) => {
+          if (product.name == "displayer") return <Displayer key={index} />;
+          return <ProductCard product={product} key={index} />;
+        })}
+        {/* </div> */}
       </div>
     </div>
   );
@@ -107,7 +107,7 @@ const Displayer = () => {
       {/* view more arrow */}
       <div className="w-full flex justify-end">
         <Link
-          href="#"
+          href="/products"
           className="bg-white text-blue-600 rounded-full float-right p-2 w-10 h-10 flex items-center justify-center hover:bg-gray-200"
         >
           <ArrowForwardRounded className="-rotate-45" />
